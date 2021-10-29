@@ -69,6 +69,31 @@ int Solution::maxLengthBetweenEqualCharacters(std::string s)
     return *std::max_element(lengths.begin(), lengths.end());
 }
 
+int Solution::searchInsert(std::vector<int>& nums, int target)
+{
+    int result=-1;
+    int i=0,j=nums.size()-1;
+    if (target > nums[j])
+        return j+1;
+    if(target <= nums[i])
+        return i;
+    while (i<j)
+    {
+        int next_pos = (i+j)/2;
+        if (nums[next_pos] == target)
+            return next_pos;
+        if (next_pos == i)
+            return i+1;
+        else if (target > nums[next_pos])
+            i = next_pos;
+        else
+            j = next_pos;
+    }
+    result = i+1;
+    return result;
+}
+
+
 
 
 

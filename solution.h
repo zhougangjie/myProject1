@@ -13,6 +13,7 @@ public:
     int removeDuplicates(std::vector<int>& nums);
     int removeElement(std::vector<int>& nums, int val);
     int maxLengthBetweenEqualCharacters(std::string s);
+    int searchInsert(std::vector<int>& nums, int target);
 };
 
 
